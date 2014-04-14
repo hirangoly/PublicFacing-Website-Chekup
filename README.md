@@ -1,4 +1,4 @@
-PublicFacing-Website-Chekup
+PublicFacing-Website-Users-Tracking
 ===========================
 Every public facing needs to keep track of user's involvement/activities to the website.
 This project keeps track following user's activities and notify them timely:
