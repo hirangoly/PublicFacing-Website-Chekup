@@ -40,7 +40,7 @@ preg_match('|PHutm_source = (.*)\n|',$emailConfFileContents,$result);
 $utmsourcePH = str_replace('"','',$result[1]);
 
 
-$querySK = "SELECT t1.username, email, firstname, cnt_cat as cnt FROM (SELECT count( u1.category_id ) AS cnt_cat, u1.username FROM ezdia.user_experties u1 GROUP BY u1.username)t1 INNER JOIN users t2 WHERE t1.username = t2.username AND t1.cnt_cat <".$skillCount. " LIMIT 1"";
+$querySK = "SELECT t1.username, email, firstname, cnt_cat as cnt FROM (SELECT count( u1.category_id ) AS cnt_cat, u1.username FROM abc.user_experties u1 GROUP BY u1.username)t1 INNER JOIN users t2 WHERE t1.username = t2.username AND t1.cnt_cat <".$skillCount. " LIMIT 1"";
 
 $userarray = array();
 $j=-1;
@@ -105,19 +105,19 @@ $query = $querySK;
 					$mail = new PHPMailer();
 
 					$mail->IsSMTP(); // send via SMTP
-					$mail->Host = "ezdia.com"; // SMTP servers
+					$mail->Host = "something.com"; // SMTP servers
 					$mail->Port = "25";
 					$mail->SMTPAuth = true; // turn on SMTP authentication
-					$mail->Username = "communications@mail.ezdea.com"; // SMTP username
-					$mail->Password = "eZdia3312"; // SMTP password
+					$mail->Username = "communications@mail.something.com"; // SMTP username
+					$mail->Password = "abc3312"; // SMTP password
 
 					$mail->From = $from;
-					$mail->FromName = "Varsha";
+					$mail->FromName = "Rangoly";
 					
 					$mail->AddAddress("$to","");
-					$mail->AddReplyTo("verification@ezdia.com","Varsha");
+					$mail->AddReplyTo("verification@something.com","Varsha");
 
-					$subject = 'Lot many oppotunities for you on eZdia';
+					$subject = 'Lot many oppotunities for you on abc';
 					$mail->WordWrap = 50; // set word wrap
 					$mail->IsHTML(true); // send as HTML
 
